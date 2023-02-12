@@ -3,7 +3,14 @@ package shoppingCartProject;
 public class Product {
 	private String prodName;
 	private int price;
+	private int proDetail;
 	
+	public int getProDetail() {
+		return proDetail;
+	}
+	public void setProDetail(int proDetail) {
+		this.proDetail = proDetail;
+	}
 	public String getProdName() {
 		return prodName;
 	}

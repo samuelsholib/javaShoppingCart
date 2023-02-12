@@ -3,13 +3,12 @@ package shoppingCartProject;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class ShoppingCart {
 
-	//Cart Data Structure
+	//ArrayList to add cart data
 	private ArrayList<String> shoppingCart = new ArrayList<>(); 
 	private ArrayList<Product> shopCart = new ArrayList<>(); 
 	
-	//Methods for Cart Class
 	
 	//Add Products to Cart
 	public void addToCart(Product product) {
@@ -27,8 +26,9 @@ public class Cart {
 	
 	//Delete Products from Cart
 	public Product deleteProduct() {
-	return shopCart.remove(getCartLength());	
+	return shopCart.remove(getCartLength());
 	}
+	
 	
 	//Update Products in the Cart
 	public Product updateProduct() {
@@ -43,8 +43,7 @@ public class Cart {
 			}
 		}
 		return shopCart.set(getCartLength(), null);
-	}
-//		
+	}		
 
 	
 	//View all Products in the Cart
@@ -64,7 +63,7 @@ public class Cart {
 	}
 	
 	//Cart Total Method
-	public void cartTotal()
+	public  void cartTotal()
 	{
 		int cartTotal = 0;
 		for(int i=0; i < shopCart.size(); i++)
@@ -74,7 +73,32 @@ public class Cart {
 		System.out.println("Total Cart - " + cartTotal);
 	}
 	
-	//Empty all Products in the Cart
+	int finalPrice = 0;
+	
+	public void subTotal() {
+	
+		for (int i=0; i< shopCart.size(); i++)
+		{
+		    Product sumPrice = shopCart.get(i);
+		    double taxValue = ((sumPrice.getPrice())* 0.1);
+		    finalPrice += taxValue;
+		    
+//		    
+//		}
+		    System.out.println("Tax applied to this Item is: " + "$" + taxValue);
+//	System.out.println("Total tax todays is: "+"$" +(taxValue + taxTotal(i)) );
+	}
 	
 	
+}
+	private double taxTotal(int i) {
+		int taxTotal = 0;
+		for(int i1=0; i1 < shopCart.size(); i1++)
+		{	
+			taxTotal =  shopCart.get(i1).getPrice();
+		}
+//		System.out.println("Total Cart - " + taxTotal);
+//	 
+		return 0;
+	}
 }

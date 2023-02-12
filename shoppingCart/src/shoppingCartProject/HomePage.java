@@ -7,9 +7,8 @@ public class HomePage {
 	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Cart antonioCart = new Cart();
+		ShoppingCart samCart = new ShoppingCart();
 			Product nike = new Product();
 			nike.setProdName("Nike Shoes");
 			nike.setPrice(100);
@@ -23,15 +22,16 @@ public class HomePage {
 			iphone.setPrice(1200);
 		
 		
-		antonioCart.addToCart(nike);
-		antonioCart.addToCart(chanel);
-		antonioCart.addToCart(iphone);
-		antonioCart.addToCart(iphone);
+			samCart.addToCart(nike);
+			samCart.addToCart(chanel);
+			samCart.addToCart(iphone);
+			samCart.addToCart(iphone);
 		
-		System.out.println("Number of Products in Cart - " + antonioCart.getCartLength());
+		System.out.println("Number of Products in Cart - " + samCart.getCartLength());
 		System.out.println();
-		antonioCart.showAllProducts();
-		antonioCart.cartTotal();
+		samCart.showAllProducts();
+		samCart.cartTotal();
+		samCart.subTotal();
 
 	}
 
